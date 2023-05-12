@@ -14,14 +14,14 @@
   width: 6vw;
   text-align: center;
   background-color: #fff;
-}
-
-.item a {
-  color: black;
-  display: block;
   text-decoration: none;
 }
 
-a.active {
+.item:hover {
+  background-color: cadetblue;
+  color: blueviolet;
+}
+
+.item.active {
   color: darkgoldenrod;
 }
