@@ -1,0 +1,12 @@
+.postItem {
+  background-color: #fff;
+  margin: .5vh 0;
+  padding: .5vh .5vw;
+  border: 2px solid firebrick;
+  border-radius: 10px;
+}
+
+.postItem img {
+  width: 2.5vw;
+  border-radius: 50%;
+}
