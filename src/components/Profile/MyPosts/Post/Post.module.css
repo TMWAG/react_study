@@ -4,9 +4,22 @@
   padding: .5vh .5vw;
   border: 2px solid firebrick;
   border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .postItem img {
   width: 2.5vw;
   border-radius: 50%;
+}
+
+.postItem span {
+  display: block;
+  width: 100%;
+  padding: 0 1vw;
+}
+
+.postItem button {
+  width: 4vw;
 }
