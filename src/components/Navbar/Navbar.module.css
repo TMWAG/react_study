@@ -17,6 +17,10 @@
   text-decoration: none;
 }
 
+.nav a {
+  text-decoration: none;
+}
+
 .item:hover {
   background-color: cadetblue;
   color: blueviolet;
@@ -24,4 +28,9 @@
 
 .item.active {
   color: darkgoldenrod;
+}
+
+a.active>.item {
+  background-color: aqua;
+  color: green;
 }
