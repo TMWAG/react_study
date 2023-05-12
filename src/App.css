@@ -9,5 +9,7 @@
   grid-template-columns: 2fr 10fr;
 }
 
-
-
+.app-content-wrapper {
+  grid-area: c;
+  background-color: yellow;
+}
