@@ -1,9 +1,9 @@
-import styles from './Dialogs.module.css';
+import styles from './Messages.module.css';
 
 const Dialogs = () => {
   return (
     <div>
-      dialogs
+      Messages
     </div>
   );
 };
