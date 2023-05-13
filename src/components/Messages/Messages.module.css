@@ -6,11 +6,16 @@
 .dialogsItems {
   display: flex;
   flex-direction: column;
-  padding: 2.25vh 1vw;
+  padding: 1.25vh 1vw;
+}
+
+.dialogsItems>a {
+  text-decoration: none;
 }
 
 .dialog {
   display: flex;
+  color: bisque;
   align-items: center;
   justify-content: space-between;
   background-color: coral;
@@ -19,19 +24,25 @@
   border-radius: 10px;
 }
 
-.dialog img {
+.dialogPicture {
   width: 2.5vw;
   border-radius: 50%;
 }
+
 
 .dialog.active {
   background-color: crimson;
 }
 
 .messages {
-
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .message {
-
-}
+  background-color: royalblue;
+  margin: .5vh .25vw;
+  padding: 1vh 1vw;
+  border-radius: 10px;
+} 
