@@ -1,0 +1,37 @@
+.dialogsBox {
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+  display: flex;
+  flex-direction: column;
+  padding: 2.25vh 1vw;
+}
+
+.dialog {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: coral;
+  margin: 1vh 0;
+  padding: .5vh .25vw;
+  border-radius: 10px;
+}
+
+.dialog img {
+  width: 2.5vw;
+  border-radius: 50%;
+}
+
+.dialog.active {
+  background-color: crimson;
+}
+
+.messages {
+
+}
+
+.message {
+
+}
