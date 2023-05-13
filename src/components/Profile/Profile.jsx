@@ -1,12 +1,12 @@
 import MyPosts from './MyPosts/MyPosts';
+import ProfileInfo from './ProfileInfo/ProfileInfo'
 import styles from './Profile.module.css';
 
 const Profile = () => {
   return (
     <div>
-      <img src="https://www.borealcm.com/wp-content/uploads/2015/06/placeholderimg-1024x576.png" alt="pfp" />
-      <div>ava + desc</div>
-      <MyPosts/>
+      <ProfileInfo />
+      <MyPosts />
     </div>
   );
 };
