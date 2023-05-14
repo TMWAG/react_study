@@ -1,0 +1,20 @@
+.dialog {
+  display: flex;
+  color: bisque;
+  align-items: center;
+  justify-content: space-between;
+  background-color: coral;
+  margin: 1vh 0;
+  padding: .5vh .25vw;
+  border-radius: 10px;
+}
+
+.dialogPicture {
+  width: 2.5vw;
+  border-radius: 50%;
+}
+
+
+.dialog.active {
+  background-color: crimson;
+}

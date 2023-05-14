@@ -1,24 +1,6 @@
-import { NavLink } from 'react-router-dom';
+import MessageItem from './MessageItem/MessageItem';
+import DialogItem from './DialogItem/DialogItem';
 import styles from './Messages.module.css';
-
-const DialogItem = (props) => {
-  return (
-    <NavLink to={`/messages/${props.userId}`}>
-      <div className={styles.dialog}>
-        <img src={props.profilePicture} alt={props.userName} className={styles.dialogPicture} />
-        {props.userName}
-      </div>
-    </NavLink>
-  );
-};
-
-const MessageItem = (props) => {
-  return (
-    <div className={styles.message}>
-      {props.message}
-    </div>
-  );
-};
 
 const Messages = () => {
   let dialogsData = [
