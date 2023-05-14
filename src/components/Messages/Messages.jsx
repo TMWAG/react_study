@@ -10,7 +10,7 @@ const DialogItem = (props) => {
       </div>
     </NavLink>
   );
-}; 
+};
 
 const MessageItem = (props) => {
   return (
@@ -21,46 +21,34 @@ const MessageItem = (props) => {
 };
 
 const Messages = () => {
+  let dialogsData = [
+    { userId: 1, userName: 'Dima', profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg' },
+    { userId: 2, userName: 'Anderew', profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg' },
+    { userId: 3, userName: 'Sasha', profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg' },
+    { userId: 4, userName: 'Ira', profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg' },
+    { userId: 5, userName: 'Victor', profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg' },
+    { userId: 6, userName: 'Slava', profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg' },
+  ];
+  
+  let dialogsElements = dialogsData.map((dialog) => <DialogItem userId={dialog.userId} userName={dialog.userName} profilePicture={dialog.profilePicture} />);
+
+  let messagesData = [
+    { id: 1, message: 'Hello' },
+    { id: 2, message: 'I' },
+    { id: 3, message: 'Am' },
+    { id: 4, message: 'Gnome' },
+    { id: 5, message: 'And you been gnoomed' },
+  ];
+
+  let messagesElements = messagesData.map((message) => <MessageItem message={message.message} />)
+
   return (
     <div className={styles.dialogsBox}>
       <div className={styles.dialogsItems}>
-        <DialogItem
-          userId='1' 
-          profilePicture='https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg' 
-          userName='Dima' 
-        />
-        <DialogItem
-          userId='2'
-          profilePicture='https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg'
-          userName='Andrew'
-        />
-        <DialogItem
-          userId='3'
-          profilePicture='https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg'
-          userName='Sasha'
-        />
-        <DialogItem
-          userId='4'
-          profilePicture='https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg'
-          userName='Ira'
-        />
-        <DialogItem
-          userId='5'
-          profilePicture='https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg'
-          userName='Victor'
-        />
-        <DialogItem
-          userId='6'
-          profilePicture='https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg'
-          userName='Slava'
-        />
+        { dialogsElements }
       </div>
       <div className={styles.messages}>
-        <MessageItem message='Hello' />
-        <MessageItem message='I' />
-        <MessageItem message='Am' />
-        <MessageItem message='gnome' />
-        <MessageItem message='and you been gnomed' />
+        { messagesElements }
       </div>
     </div>
   );
