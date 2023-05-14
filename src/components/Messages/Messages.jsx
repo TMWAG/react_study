@@ -3,8 +3,8 @@ import DialogItem from './DialogItem/DialogItem';
 import styles from './Messages.module.css';
 
 const Messages = (props) => {
-  let dialogsElements = props.dialogsData.map((dialog) => <DialogItem userId={dialog.userId} userName={dialog.userName} profilePicture={dialog.profilePicture} />);
-  let messagesElements = props.messagesData.map((message) => <MessageItem message={message.message} />)
+  let dialogsElements = props.dialogs.map((dialog) => <DialogItem userId={dialog.userId} userName={dialog.userName} profilePicture={dialog.profilePicture} />);
+  let messagesElements = props.messages.map((message) => <MessageItem message={message.message} />)
 
   return (
     <div className={styles.dialogsBox}>
