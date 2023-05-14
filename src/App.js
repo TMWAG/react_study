@@ -18,16 +18,19 @@ const App = (props) => {
           <Routes>
             <Route
               path='/profile' 
-              element={<Profile 
-                posts={props.posts}
-              />} 
+              element={
+                <Profile 
+                  state={props.state.profilePage}
+                />
+              }
             />
             <Route 
               path='/messages/*' 
-              element={<Messages 
-              dialogs={props.dialogs} 
-              messages={props.messages} 
-              />} 
+              element={
+                <Messages 
+                  state={props.state.messagesPage} 
+                />
+              }
             />
             <Route
               path='/news'
