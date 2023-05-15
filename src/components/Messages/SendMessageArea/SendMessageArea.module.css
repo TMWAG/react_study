@@ -1,0 +1,31 @@
+.area {
+  background-color: bisque;
+  margin: .5vh .25vw;
+  display: flex;
+}
+
+.area button {
+  background-color: firebrick;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.area button:hover {
+  background-color: rgb(161, 31, 31);
+}
+
+.area button:active {
+  background-color: rgb(194, 37, 37);
+}
+
+.area textarea {
+  width: 90%;
+  border: 2px solid firebrick;
+  border-radius: 10px 0 0 10px;
+  resize: none;
+  outline: none;
+}

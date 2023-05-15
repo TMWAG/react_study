@@ -1,5 +1,7 @@
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const SEND_MESSAGE = 'SEND-MESSAGE';
+const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE-NEW-MESSAGE-TEXT'
 
 let store = {
   _state: {
@@ -27,6 +29,7 @@ let store = {
         { id: 4, message: 'Gnome' },
         { id: 5, message: 'And you been gnoomed' },
       ],
+      newMessageText: '',
     },
   },
   _callSubscriber() {
@@ -51,7 +54,20 @@ let store = {
         this._callSubscriber(this._state);
         break;
       case UPDATE_NEW_POST_TEXT:
-        this._state.profilePage.newPostText = action.newText;
+        this._state.profilePage.newPostText = action.newPostText;
+        this._callSubscriber(this._state);
+        break;
+      case SEND_MESSAGE:
+        const newMessage = {
+          id: this._state.messagesPage.messages.length,
+          message: this._state.messagesPage.newMessageText,
+        };
+        this._state.messagesPage.messages.push(newMessage);
+        this._state.messagesPage.newMessageText = '';
+        this._callSubscriber(this._state);
+        break;
+      case UPDATE_NEW_MESSAGE_TEXT:
+        this._state.messagesPage.newMessageText = action.newMessageText;
         this._callSubscriber(this._state);
         break;
       default:
@@ -68,8 +84,19 @@ export const addPostActionCreator = () => {
 export const updateNewPostTextActionCreator = (text) => {
   return {
     type: UPDATE_NEW_POST_TEXT,
-    newText: text,
+    newPostText: text,
   }
-} 
+};
+export const sendMessageActionCreator = () => {
+  return {
+    type: SEND_MESSAGE,
+  };
+};
+export const updateNewMessageTextActionCreator = (text) => {
+  return {
+    type: UPDATE_NEW_MESSAGE_TEXT,
+    newMessageText: text,
+  };
+};
 
 export default store;
