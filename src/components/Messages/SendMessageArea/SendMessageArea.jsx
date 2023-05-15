@@ -1,12 +1,9 @@
-import { createRef } from 'react';
 import { sendMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/state';
 import styles from './SendMessageArea.module.css';
 
 const SendMessageArea = (props) => {
-  const newMessageElement = createRef();
-
-  const onMessageChange = () => {
-    props.dispatch(updateNewMessageTextActionCreator(newMessageElement.current.value));
+  const onMessageChange = (e) => {
+    props.dispatch(updateNewMessageTextActionCreator(e.target.value));
   };
   const sendMessage = () => {
     props.dispatch(sendMessageActionCreator());
@@ -14,7 +11,7 @@ const SendMessageArea = (props) => {
   
   return (
     <div className={styles.area}>
-      <textarea ref={newMessageElement} onChange={onMessageChange} value={props.newMessageText} />
+      <textarea onChange={onMessageChange} value={props.newMessageText} />
       <button className={styles.button} onClick={sendMessage}>send</button>
     </div>
   );
