@@ -29,8 +29,7 @@ const App = (props) => {
               path='/messages/*' 
               element={
                 <Messages 
-                  state={props.state.messagesPage}
-                  dispatch={props.dispatch}
+                  store={props.store}
                 />
               }
             />
