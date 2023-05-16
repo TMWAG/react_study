@@ -1,4 +1,4 @@
-import { sendMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/state';
+import { sendMessageActionCreator, updateNewMessageTextActionCreator } from '../../../redux/messages-reducer';
 import styles from './SendMessageArea.module.css';
 
 const SendMessageArea = (props) => {

@@ -2,7 +2,7 @@ import MessageItem from './MessageItem/MessageItem';
 import DialogItem from './DialogItem/DialogItem';
 import styles from './Messages.module.css';
 import SendMessageArea from './SendMessageArea/SendMessageArea';
-import store from '../../redux/state';
+import store from '../../redux/store';
 
 const Messages = (props) => {
   let state = props.store.getState().messagesPage;
