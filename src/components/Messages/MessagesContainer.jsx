@@ -1,32 +1,25 @@
+import { connect } from "react-redux";
 import { sendMessageActionCreator, updateNewMessageTextActionCreator } from "../../redux/messages-reducer";
-import StoreContext from "../../store-context";
 import Messages from "./Messages";
 
-const MessagesContainer = (props) => {
-  return (
-    <StoreContext.Consumer>
-      {(store) => {
-        const state = store.getState();
-        const onMessageChange = (text) => {
-          store.dispatch(updateNewMessageTextActionCreator(text));
-        };
-        const onMessageSend = () => {
-          store.dispatch(sendMessageActionCreator());
-        };
-        const dialogs = state.messagesPage.dialogs;
-        const messages = state.messagesPage.messages;
-        return (
-          <Messages
-            dialogs={dialogs}
-            messages={messages}
-            onMessageChange={onMessageChange}
-            onMessageSend={onMessageSend}
-            newMessageText={state.messagesPage.newMessageText}
-          />
-        );
-      }}
-    </StoreContext.Consumer>
-  );
+const mapStateToProps = (state) => {
+  return {
+    messages: state.messagesPage.messages,
+    dialogs: state.messagesPage.dialogs,
+    newMessageText: state.messagesPage.newMessageText,
+  };
 };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onMessageChange: (text) => {
+      dispatch(updateNewMessageTextActionCreator(text));
+    },
+    onMessageSend: () => {
+      dispatch(sendMessageActionCreator());
+    },
+  };
+};
+
+const MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
 
 export default MessagesContainer;
