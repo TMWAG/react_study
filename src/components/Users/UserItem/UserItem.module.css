@@ -1,0 +1,12 @@
+.userItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border: 2px solid grey;
+  width: 80%;
+}
+
+.userItem img {
+  width: 4vw;
+  border-radius: 10px;
+}
+
