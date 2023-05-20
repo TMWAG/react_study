@@ -1,44 +1,16 @@
+import React from 'react';
 import UserItem from './UserItem/UserItem';
 import styles from './Users.module.css';
+import axios from 'axios';
 
-const Users = (props) => {
+const Users = (props) => {  
   if (!props.users.length) {
-    props.setUsers([
-      {
-        id: 1,
-        followed: true,
-        fullName: 'Dmitry',
-        status: 'Professional gnome',
-        location: { city: 'Minsk', country: 'Belarus' },
-        profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg',
-      },
-      {
-        id: 2,
-        followed: false,
-        fullName: 'Sergey',
-        status: 'Service worker',
-        location: { city: 'Moscow', country: 'Russia' },
-        profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg',
-      },
-      {
-        id: 3,
-        followed: true,
-        fullName: 'Andrew',
-        status: 'Linux enjoyer',
-        location: { city: 'Kazan', country: 'Russia' },
-        profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg',
-      },
-      {
-        id: 4,
-        followed: false,
-        fullName: 'Roman',
-        status: 'Runner',
-        location: { city: 'Tbilisi', country: 'Georgia' },
-        profilePicture: 'https://mulinecxc.ru/wp-content/uploads/2020/08/106400558.jpg',
-      },
-    ]);
+    axios.get('https://social-network.samuraijs.com/api/1.0/users')
+      .then(response => {
+        props.setUsers(response.data.items);
+      })
+    
   };
-  debugger;
   const userElements = props.users.map(u => <UserItem key={u.id} user={u} follow={props.follow} unfollow={props.unfollow} />)
   return (
     <div className={styles.users}>
