@@ -4,3 +4,7 @@
   align-items: center;
   padding: 2vh 2vw;
 }
+
+.selected {
+  font-weight: bold;
+}

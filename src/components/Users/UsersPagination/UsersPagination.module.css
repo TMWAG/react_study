@@ -1,0 +1,24 @@
+.pagination {
+  display: flex;
+}
+
+.item {
+  border: 2px solid rgb(43, 226, 125);
+  display: block;
+  padding: 1vh 1.1vw;
+  background-color: rgb(75, 124, 126);
+  color: white;
+  cursor: pointer;
+}
+
+.item:first-child {
+  border-radius: 10px 0 0 10px;
+}
+
+.item:last-child {
+  border-radius: 0 10px 10px 0;
+}
+
+.current {
+  border: 2px solid salmon;
+}
